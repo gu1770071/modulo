@@ -53,17 +53,17 @@ class Preco extends MY_Controller{
      * Página para edição das tarefas
      * @param int tarefa_id: o id da tarefa editada
      */
-    public function editar($tarefa_id){
-        $this->validate_id($tarefa_id);
-        $turma_id = $this->model->edita_tarefa($tarefa_id);
-        $turma = $this->model->nome_turma($turma_id);
+    public function editar($preco_id){
+        $this->validate_id($preco_id);
+        $produto_id = $this->model->edita_preco($preco_id);
+        $produto = $this->model->nome_produto($produto_id);
         $data['show_form'] = true;
 
-        $data['titulo'] = "Editar Tarefa da Turma - $turma";
+        $data['titulo'] = "Editar Preço do Produto - $produto";
         $data['rotulo_botao'] = 'Nova Tarefa';
         $data['form_subject'] = 'nova_tarefa';
         $data['topo_pagina'] = $this->load->view('topo_pagina', $data, true);
-        $data['formulario'] = $this->load->view('tarefa/form_tarefa', $data, true);
+        $data['formulario'] = $this->load->view('preco/form_preco', $data, true);
 
         $html = $this->load->view('main', $data, true);
         $this->show($html);

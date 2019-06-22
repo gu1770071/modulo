@@ -26,7 +26,7 @@ class PrecoModel extends CI_Model{
      * @return string: código html da tabela
      */
     public function lista_precos($produto_id){
-        $header = array('#', 'Nome', 'Lucro', 'Preço');
+        $header = array('#', 'Preço de Compra','Custo Fixo','Lucro', 'Preço');
         $this->load->library('PrecoProduto', null, 'preco');
         $this->preco->cols(array('id', 'compra', 'fixo', 'lucro', 'preco'));
         $data = $this->preco->get(array('id' => $produto_id));
@@ -105,7 +105,7 @@ class PrecoModel extends CI_Model{
      * @return string nome do produto
      */
     public function nome_produto($produto_id){
-        $this->load->library('produto');
+        $this->load->library('Produto');
         return $this->produto->nome($produto_id);
     }
 }

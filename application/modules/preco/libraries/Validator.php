@@ -11,4 +11,11 @@ class Validator extends CI_Object{
         return $this->form_validation->run();
     }
 
+    public function form_preco(){
+        $this->form_validation->set_rules('compra', 'compra', 'trim|required');
+        $this->form_validation->set_rules('fixo', 'fixo', 'trim|required');
+        $this->form_validation->set_rules('lucro', 'lucro', 'trim|required');
+        return $this->form_validation->run();
+    }
+
 }
