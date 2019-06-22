@@ -9,7 +9,7 @@ class PrecoProduto extends Dao {
 
     public function insert($data, $table = null) {
         // mais uma camada de segurança... além da validação
-        $cols = array('nome', 'fixo', 'lucro');
+        $cols = array('compra', 'fixo', 'lucro', 'preco', 'produto_id');
         $this->expected_cols($cols);
 
         return parent::insert($data);

@@ -56,6 +56,11 @@ class PrecoModel extends CI_Model{
             $data = $this->input->post();
             $data['preco'] = $data['compra']+$data['fixo']+($data['compra'] + $data['fixo'])*$data['lucro']/100;
             $data['produto_id'] = $produto_id;
+
+            var_dump($data);
+            die();
+
+
             $this->preco->insert($data);
         }
         else return true;
