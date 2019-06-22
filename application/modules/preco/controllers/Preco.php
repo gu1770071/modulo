@@ -9,14 +9,10 @@ class Preco extends MY_Controller{
     }
 
     /**
-     * Página que exibe a lista de turmas. Note que listar as turmas não 
-     * é responsabilidade deste módulo, mas é importante para o seu funcionamento.
-     * Esta página foi criada para que você possa entender a dependência entre 
-     * módulos e como você deve lidar com esta situação.
-     * 
-     * O módulo "tarefa" é dependente do módulo "turma". Por este motivo, simulamos 
-     * o comportamento do módulo "turma" usando conteúdo estático que serve apenas 
-     * para que o uso do módulo "tarefa" seja o mais realista possível.
+     * Página que exibe a lista de produtos.
+     * O módulo "preco" é dependente do módulo "produtos". Por este motivo, simulamos
+     * o comportamento do módulo "produtos" usando conteúdo estático que serve apenas
+     * para que o uso do módulo "preco" seja o mais realista possível.
      */
     public function index(){
         $data['titulo'] = 'Lista de Produtos';
@@ -35,20 +31,19 @@ class Preco extends MY_Controller{
      * Página para criação de tarefas
      * @param int turma_id: o id da turma para a qual será direcionada a tarefa
      */
-    public function criar($turma_id){
-        $this->add_script('tarefa/mascara');
-        
-        $this->validate_id($turma_id);
-        $turma = $this->model->nome_turma($turma_id);
-        $data['show_form'] = $this->model->nova_tarefa($turma_id);
+    public function criar($produto_id){
+
+        $this->validate_id($produto_id);
+        $produto = $this->model->nome_produto($produto_id);
+        $data['show_form'] = $this->model->novo_preco($produto_id);
 
         $data['home'] = true;
-        $data['titulo'] = "Tarefas da Turma - $turma";
-        $data['rotulo_botao'] = 'Nova Tarefa';
-        $data['form_subject'] = 'nova_tarefa';
+        $data['titulo'] = "Preço do Produto - $produto";
+        $data['rotulo_botao'] = 'Novo Preço';
+        $data['form_subject'] = 'novo_preco';
         $data['topo_pagina'] = $this->load->view('topo_pagina', $data, true);
-        $data['formulario'] = $this->load->view('form_tarefa', $data, true);
-        $data['lista'] = $this->model->lista_tarefas($turma_id);
+        $data['formulario'] = $this->load->view('form_preco', $data, true);
+        $data['lista'] = $this->model->lista_precos($produto_id);
 
         $html = $this->load->view('main', $data, true);
         $this->show($html);

@@ -44,7 +44,7 @@ class MY_Controller extends MX_Controller {
 
     protected function validate_id($id) {
         if (intval($id) < 1)
-            redirect('tarefa');
+            redirect('preco');
     }
 
 }

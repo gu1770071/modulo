@@ -4,19 +4,14 @@
         <div class="card-body">
             <form method="POST" class="text-center border border-light p-4">
                 <div class="form-row mb-4">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <input type="text" name="nome" value="<?= set_value('nome') ?>" class="form-control" placeholder="Nome">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <input type="text" name="compra" value="<?= set_value('compra') ?>" class="form-control" placeholder="Preço de Compra">
                     </div>
-                </div>
-                <div class="form-row mb-4">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <input type="text" name="fixo" value="<?= set_value('fixo') ?>" class="form-control mb-4" placeholder="Custo Fixo">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="lucro" value="<?= set_value('lucro') ?>" class="form-control" placeholder="Margem de Lucro" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                     </div>
                 </div>
                 <div class="text-center text-md-right">
