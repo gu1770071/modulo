@@ -11,7 +11,7 @@ class PrecoModel extends CI_Model{
     public function fake_list(){
         $this->load->library('Produto');
         $data = $this->produto->lista();
-        $header = array('#', 'Nome', 'Preço de Compra', 'Custo Fixo', 'Preço do Concorrente', 'Preço Sugerido');
+        $header = array('#', 'Nome', 'Preço de Compra', 'Custo Fixo', 'Margem de Lucro (%)');
         $table = new Table($data, $header);
         $table->action('produto/criar');
         $table->zebra_table();

@@ -16,7 +16,7 @@
                         <input type="text" name="fixo" value="<?= set_value('fixo') ?>" class="form-control mb-4" placeholder="Custo Fixo">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" name="concorrente" value="<?= set_value('concorrente') ?>" class="form-control" placeholder="Concorrente" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                        <input type="text" name="lucro" value="<?= set_value('lucro') ?>" class="form-control" placeholder="Margem de Lucro" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                     </div>
                 </div>
                 <div class="text-center text-md-right">

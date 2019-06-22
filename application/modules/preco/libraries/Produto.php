@@ -15,10 +15,10 @@ class Produto extends Dao{
      */
     public function lista(){
         return array(
-            array('id' => 1, 'Leite', 'R$10,00', 'R$5,00', 'R$20,00',''),
-            array('id' => 2, 'Bala', 'R$1,00', 'R$0,50', 'R$3,00',''),
-            array('id' => 3, 'Amendoim', 'R$5,00', 'R$2,00', 'R$10,00',''),
-            array('id' => 4, 'Bolacha', 'R$2,00', 'R$1,00', 'R$5,00',''),
+            array('id' => 1, 'Leite', 'R$10,00', 'R$5,00', '20'),
+            array('id' => 2, 'Bala', 'R$1,00', 'R$0,50', '30'),
+            array('id' => 3, 'Amendoim', 'R$5,00', 'R$2,00','10'),
+            array('id' => 4, 'Bolacha', 'R$2,00', 'R$1,00', '50'),
         );
     }
         
