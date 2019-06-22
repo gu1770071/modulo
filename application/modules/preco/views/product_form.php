@@ -8,10 +8,10 @@
                         <input type="text" name="nome" value="<?= set_value('nome') ?>" class="form-control" placeholder="Nome">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" name="compra" value="<?= set_value('compra') ?>" class="form-control" placeholder="Preço de Compra">
+                        <input type="text" name="descricao" value="<?= set_value('descricao') ?>" class="form-control" placeholder="Descrição do Produto">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" name="fixo" value="<?= set_value('fixo') ?>" class="form-control mb-4" placeholder="Custo Fixo">
+                        <input type="text" name="estoque" value="<?= set_value('estoque') ?>" class="form-control mb-4" placeholder="Quantidade em Estoque">
                     </div>
                 </div>
                 <div class="text-center text-md-right">

@@ -69,14 +69,14 @@ class Preco extends MY_Controller{
         $this->show($html);
     }
 
-    public function deletar($tarefa_id){
-        $this->validate_id($tarefa_id);
-        $data = $this->model->deleta_tarefa($tarefa_id);
-        $turma = $this->model->nome_turma($data['turma_id']);
+    public function deletar($preco_id){
+        $this->validate_id($preco_id);
+        $data = $this->model->deleta_preco($preco_id);
+        $produto = $this->model->nome_produto($preco_id);
 
         $data['home'] = true;
-        $data['titulo'] = "Remover Tarefa da Turma - $turma";
-        $data['turma'] = $this->model->nome_turma($data['turma_id']);
+        $data['titulo'] = "Remover Preço do Produto - $produto";
+        $data['produto'] = $produto;
         $data['topo_pagina'] = $this->load->view('topo_pagina', $data, true);
         $html = $this->load->view('confirm_delete', $data, true);
         $this->show($html);
