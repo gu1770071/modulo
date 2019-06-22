@@ -54,6 +54,7 @@ class PrecoModel extends CI_Model{
         if($this->valida->form_preco()){
             $this->load->library('PrecoProduto', null, 'preco');
             $data = $this->input->post();
+            $data['preco'] = $data['compra']+$data['fixo']+($data['compra'] + $data['fixo'])*$data['lucro']/100;
             $data['produto_id'] = $produto_id;
             $this->preco->insert($data);
         }
@@ -73,6 +74,7 @@ class PrecoModel extends CI_Model{
         if(sizeof($_POST) && $this->valida->form_preco()){
             $data = $this->input->post();
             $data['id'] = $preco_id;
+            $data['preco'] = $data['compra']+$data['fixo']+($data['compra'] + $data['fixo'])*$data['lucro']/100;
             $id = $this->preco->insert_or_update($data);
             if($id) redirect('preco/criar/'.$task[0]['produto_id']);
         }
