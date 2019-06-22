@@ -60,8 +60,8 @@ class Preco extends MY_Controller{
         $data['show_form'] = true;
 
         $data['titulo'] = "Editar Preço do Produto - $produto";
-        $data['rotulo_botao'] = 'Nova Tarefa';
-        $data['form_subject'] = 'nova_tarefa';
+        $data['rotulo_botao'] = 'Novo Preço';
+        $data['form_subject'] = 'novo_preco';
         $data['topo_pagina'] = $this->load->view('topo_pagina', $data, true);
         $data['formulario'] = $this->load->view('preco/form_preco', $data, true);
 
@@ -72,7 +72,8 @@ class Preco extends MY_Controller{
     public function deletar($preco_id){
         $this->validate_id($preco_id);
         $data = $this->model->deleta_preco($preco_id);
-        $produto = $this->model->nome_produto($preco_id);
+        $produto_id = $this->model->edita_preco($preco_id);
+        $produto = $this->model->nome_produto($produto_id);
 
         $data['home'] = true;
         $data['titulo'] = "Remover Preço do Produto - $produto";
